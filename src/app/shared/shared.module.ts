@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -17,6 +18,7 @@ import { ShellComponent } from './shell/shell.component';
 
 const components = [ShellComponent];
 const modules = [
+  CommonModule,
   MatButtonModule,
   MatToolbarModule,
   MatIconModule,
@@ -37,8 +39,7 @@ const modules = [
   imports: [...modules],
   exports: [
     ...components,
-    ...modules,
-    
+    ...modules
   ]
 })
 export class SharedModule { }
