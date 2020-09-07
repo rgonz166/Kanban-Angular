@@ -19,7 +19,7 @@ $Kanban-Angular-accent: mat-palette($mat-pink, A200, A100, A400);
 $Kanban-Angular-warn: mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$Kanban-Angular-theme: mat-light-theme($Kanban-Angular-primary, $Kanban-Angular-accent, $Kanban-Angular-warn);
+$Kanban-Angular-theme: mat-dark-theme($Kanban-Angular-primary, $Kanban-Angular-accent, $Kanban-Angular-warn);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
