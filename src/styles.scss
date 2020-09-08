@@ -30,3 +30,7 @@ $Kanban-Angular-theme: mat-dark-theme($Kanban-Angular-primary, $Kanban-Angular-a
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+a {
+  color: white;
+  text-decoration: none;
+}

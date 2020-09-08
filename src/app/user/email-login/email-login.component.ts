@@ -25,10 +25,9 @@ export class EmailLoginComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.minLength(6)], Validators.required],
-      passwordConfirm: ['', []]
-
-    })
+      password: ['', [Validators.minLength(6), Validators.required]],
+      passwordConfirm: ['', []],
+    });
   }
 
   changeType(val) {
@@ -62,12 +61,12 @@ export class EmailLoginComponent implements OnInit {
   }
 
   get passwordDoesMatch() {
-    return this.type !== 'signup' ? true : this.password.value === this.passwordConfirm.value;
-    // if (this.type !== 'signup') {
-    //   return true;
-    // } else {
-    //   return this.password.value === this.passwordConfirm.value;
-    // }
+    // return this.type !== 'signup' ? true : this.password.value === this.passwordConfirm.value;
+    if (this.type !== 'signup') {
+      return true;
+    } else {
+      return this.password.value === this.passwordConfirm.value;
+    }
   }
 
   async onSubmit() {
