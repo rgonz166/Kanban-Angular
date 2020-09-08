@@ -1,1 +1,10 @@
-<p>login works!</p>
+<main>
+  <div *ngIf="!(afAuth.authState | async)">
+    <h1>Login</h1>
+  
+    <button mat-raised-button appGoogleSignin>
+      Login with Google
+    </button>
+  </div>
+
+</main>

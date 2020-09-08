@@ -26,7 +26,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     BrowserAnimationsModule,
     SharedModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireModule,
+    AngularFirestoreModule,
     AngularFireAuthModule
   ],
   providers: [],
