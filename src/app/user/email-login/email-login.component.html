@@ -1,4 +1,24 @@
 <mat-card>
+  <div *ngIf="isSignup">
+    <h3>Create Account</h3>
+
+    <button mat-stroked-button (click)="changeType('login')">
+      Returning user?
+    </button>
+  </div>
+
+  <div *ngIf="isLogin">
+    <h3>Sign In</h3>
+    <button size="small" mat-stroked-button (click)="changeType('signup')">
+      New User?
+    </button>
+  </div>
+
+  <div *ngIf="isPasswordReset">
+    <h3>Reset Password</h3>
+    <button size="small" mat-button (click)="changeType('login')">Back</button>
+  </div>
+
 
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <!-- Email Validation -->
@@ -59,8 +79,15 @@
     >
       Submit
     </button>
-
-
   </form>
+
+  <button 
+    *ngIf="isPasswordReset"
+    mat-stroked-button
+    type="submit"
+    [disabled]="loading"
+  >
+    Send Reset Email
+  </button>
 
 </mat-card>
