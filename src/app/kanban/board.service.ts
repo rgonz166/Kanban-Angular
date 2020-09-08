@@ -28,11 +28,33 @@ export class BoardService {
   /**
   * Delete board
   */
-  deleteBoard (boardId: string) {
+  deleteBoard(boardId: string) {
     return this.db
       .collection('boards')
       .doc(boardId)
       .delete();
+  }
+
+  /**
+   * Update board
+   */
+  updateBoard(boardId: string, tasks: Task[]) {
+    return this.db
+      .collection('boards')
+      .doc(boardId)
+      .update({ tasks });
+  }
+
+  /**
+   * Remove a specific task from a board
+   */
+  removeTask(boardId: string, task: Task[]) {
+    return this.db
+      .collection('board')
+      .doc(boardId)
+      .update({
+        tasks: firebase.firestore.FieldValue.arrayRemove(task)
+      })
   }
 
 }
