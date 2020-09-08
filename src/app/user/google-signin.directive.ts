@@ -11,6 +11,6 @@ export class GoogleSigninDirective {
   constructor(private afAuth: AngularFireAuth) { }
   @HostListener('click')
   onclick() {
-    this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    this.afAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
   }
 }
