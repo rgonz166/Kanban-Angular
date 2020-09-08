@@ -60,7 +60,7 @@ export class BoardService {
   /**
    * Get all boards owned by current user
    */
-  getUserBoard() {
+  getUserBoards() {
     return this.afAuth.authState.pipe(
       switchMap(user => {
         if (user) {
