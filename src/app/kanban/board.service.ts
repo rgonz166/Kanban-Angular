@@ -79,7 +79,7 @@ export class BoardService {
   /**
    * Run a batch write to change the priority of each board for starting
    */
-  sortBoard(boards: Board[]) {
+  sortBoards(boards: Board[]) {
     const db = firebase.firestore();
     const batch = db.batch();
     const refs = boards.map(b => db.collection('boards').doc(b.id));
