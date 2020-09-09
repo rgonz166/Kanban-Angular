@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { BoardService } from '../board.service';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
@@ -7,7 +7,7 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.scss'],
 })
-export class BoardComponent implements OnInit {
+export class BoardComponent {
   @Input() board;
 
   constructor(private boardService: BoardService) {}
@@ -16,6 +16,4 @@ export class BoardComponent implements OnInit {
     moveItemInArray(this.board.tasks, event.previousIndex, event.currentIndex);
     this.boardService.updateBoard(this.board.id, this.board.tasks);
   }
-
-  ngOnInit(): void {}
 }
